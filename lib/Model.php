@@ -8,7 +8,8 @@ class Model {
 	const NOVO  = 1;
 	const USADO = 2;
 
-	public function __construct (){
+	public function __construct ()
+    {
 		static::$status = self::NOVO;
 	}
 
@@ -49,7 +50,8 @@ class Model {
 		return false;
 	}
 
-	public function save() {
+	public function save()
+    {
 		$db = Banco::instanciar();
         if ($this->validate()) {
             $this->beforeSave();
@@ -81,19 +83,23 @@ class Model {
     * Fazer um método fetch para resgatar
     * os objetos um à um deixam assim mais performatico o código
     */
-    public function fetch(PDO $fetchConst) {
+    public function fetch(PDO $fetchConst)
+    {
 
     }
 
-    protected function beforeSave () {
+    protected function beforeSave ()
+    {
 
     }
 
-    protected function afterSave () {
+    protected function afterSave ()
+    {
 
     }
 
-    protected function validate () {
+    protected function validate ()
+    {
         return true;
     }
 
