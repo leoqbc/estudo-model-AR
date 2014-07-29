@@ -22,13 +22,15 @@ function loadModels($class)
 	}
 }
 
+// Registra as pastas model e lib para
+// ficarem no outro load
 spl_autoload_register('loadLibs');
 spl_autoload_register('loadModels');
 
 Banco::dInjector(array(
     'driver'    => 'mysql',
     'host'      => 'localhost',
-    'dbname'    => 'Impacta',
+    'dbname'    => 'banco',
     'user'      => 'root',
     'pass'      => ''
 ));

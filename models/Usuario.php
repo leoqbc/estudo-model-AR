@@ -1,6 +1,8 @@
 <?php
 
 /*
+ * ATENÇÃO REMOVER ESSA CLASSE!!
+ *
  * Exemplo de classe Model
  * ao extender da Model devemos informar a tabela que este
  * Active Rocord pertence, apontar o nome da tabela como
