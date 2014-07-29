@@ -13,7 +13,7 @@
  */
 class Usuario extends Model {
 
-	protected static $tabela = 'tb_usuarios';
+    protected static $tabela = 'tb_usuarios';
     //protected static $id_column = 'cod_cli'; <- informando um campo ID com nome diferente
 
     protected function beforeSave () {
