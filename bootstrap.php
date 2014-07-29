@@ -3,7 +3,14 @@
 function loadLibs($class) 
 {
     $dir = dirname(__FILE__);
-    $file = "$dir/lib/$class.php";
+
+    $folder = explode('\\', $class);
+
+	if (count($folder) < 3) {
+		return false;
+	}
+
+    $file = "$dir\\{$folder[1]}\\{$folder[2]}.php";
 
     if (file_exists($file)) {
         require_once($file);
@@ -14,23 +21,32 @@ function loadLibs($class)
 function loadModels($class) 
 {
     $dir = dirname(__FILE__);
-    $file = "$dir/models/$class.php";
+
+    $folder = explode('\\', $class);
+
+	if (count($folder) < 3) {
+		return false;
+	}
+
+    echo $file = "$dir\\{$folder[1]}\\{$folder[2]}.php";
 
     if (file_exists($file)) {
-    require_once($file);
-    return true;
+        require_once($file);
+        return true;
     }
 }
 
-// Registra as pastas model e lib para
+// Registra as pastas model e library para
 // ficarem no outro load
 spl_autoload_register('loadLibs');
 spl_autoload_register('loadModels');
 
+use ARMODEL\Library\Banco;
+
 Banco::dInjector(array(
     'driver'    => 'mysql',
     'host'      => 'localhost',
-    'dbname'    => 'banco',
+    'dbname'    => 'seu banco',
     'user'      => 'root',
-    'pass'      => ''
+    'pass'      => 'sua senha'
 ));

@@ -11,6 +11,10 @@
  * Atenção: caso o nome da primary key for diferente de (id) informar o
  * protected static $id_column = 'cod_cli' por exemplo
  */
+
+namespace ARMODEL\Models;
+use ARMODEL\Library\Model;
+
 class Usuario extends Model {
 
     protected static $tabela = 'tb_usuarios';
