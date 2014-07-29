@@ -3,7 +3,7 @@ Estudo-Model-AR
 
 Estudo de Model usando Activive Record em PHP puro com PDO, o objetivo aqui é para estudos, da pra por em produção porém não me reponsabilizo por uso errado e inseguro do script, ele facilita a vida, mas é preciso tomar os cuidados com sanetização e SQL injection, use por sua conta e risco.
 
->Versão: Alpha 0.1.0
+>Versão: Alpha 0.0.1
 
 #####Como usar:
 
