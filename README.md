@@ -18,7 +18,8 @@ Banco::dInjector(array(
 ));
 ```
 
-**Criar no diretório model um arquivo model com sua classe extendendo Model**
+**Criar no diretório model um arquivo com sua classe extendendo Model**
+**Atenção o nome do arquivo *PRECISA* ter o mesmo nome da Classe!**
 ```php
 <?php
 class Usuario extends Model {
@@ -66,7 +67,8 @@ echo $user->nome;
 <?php
 require 'bootstrap.php';
 
-// Retorna um array de objetos sendo a chave o #id
+// Retorna um array de objetos com todos os registros da tabela 
+// sendo a chave do array o #id do objeto
 $users = Usuario::getAll();
 
 var_dump($users);
