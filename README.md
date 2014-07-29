@@ -9,7 +9,7 @@ Estudo de Model usando Activive Record em PHP puro com PDO, o objetivo aqui é p
 
 **Primeiro no arquivo bootstrap.php alterar a configuração do banco de dados**
 ```php
-Banco::dInjector(array(
+ARMODEL\Library\Banco::dInjector(array(
     'driver'    => 'mysql',
     'host'      => 'localhost',
     'dbname'    => 'seubanco',
@@ -22,6 +22,10 @@ Banco::dInjector(array(
 **Atenção o nome do arquivo *PRECISA* ter o mesmo nome da Classe!**
 ```php
 <?php
+// Agora com namespaces
+namespace ARMODEL\Models;
+use ARMODEL\Library\Model;
+
 class Usuario extends Model {
 	protected static $tabela = 'tb_usuarios'; // nome da sua tabela que será mapeada nessa classe
   //protected static $id_column = 'cod_cli'; <- mudar caso a primary key ter um nome diferente de id
@@ -31,6 +35,7 @@ class Usuario extends Model {
 **Modo de uso no seu arquivo: *index.php* por exemplo**
 ```php
 <?php
+namespace ARMODEL\Models;
 require 'bootstrap.php';
 
 // Criar um novo registro
@@ -54,6 +59,7 @@ if ($usuario->save()) {
 **Recuperando dados:**
 ```php
 <?php
+namespace ARMODEL\Models;
 require 'bootstrap.php';
 
 // Retorna um objeto Usuario com os valores dos campos nas propriedades
@@ -65,6 +71,7 @@ echo $user->nome;
 **Recuperando mais de um usuário:**
 ```php
 <?php
+namespace ARMODEL\Models;
 require 'bootstrap.php';
 
 // Retorna um array de objetos com todos os registros da tabela 
@@ -77,6 +84,7 @@ var_dump($users);
 **Para excluir um usuário:**
 ```php
 <?php
+namespace ARMODEL\Models;
 require 'bootstrap.php';
 
 // Retorna objeto Usuario com dados do registro id 5
