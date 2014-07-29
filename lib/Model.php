@@ -1,6 +1,5 @@
 <?php
-// teste tab    ola
-//  aol aol
+
 // Este model depende da Classe Banco
 class Model {
     protected static $tabela;

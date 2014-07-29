@@ -2,7 +2,6 @@
  
 class Banco
 {
-
     private static  $instancia;
     private         $conexao;
     public static   $dependencias;
