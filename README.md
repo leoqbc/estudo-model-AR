@@ -56,12 +56,12 @@ if ($usuario->save()) {
 require 'bootstrap.php';
 
 // Retorna um objeto Usuario com os valores dos campos nas propriedades
-$user = Ususario::getById(2);
+$user = Usuario::getById(2);
 
 // Para acessa-las basta chamar a propriedade
 echo $user->nome;
 ```
-**Recuperando mais de um usuario:**
+**Recuperando mais de um usuário:**
 ```php
 <?php
 require 'bootstrap.php';
@@ -70,4 +70,17 @@ require 'bootstrap.php';
 $users = Usuario::getAll();
 
 var_dump($users);
+```
+
+**Para excluir um usuário:**
+```php
+<?php
+require 'bootstrap.php';
+
+// Retorna objeto Usuario com dados do registro id 5
+// do banco de dados
+$user = Usuario::getById(5);
+
+// Deleta este usuario da tabela banco
+$user->delete();
 ```
