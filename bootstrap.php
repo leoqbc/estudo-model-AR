@@ -6,9 +6,9 @@ function loadLibs($class)
 
     $folder = explode('\\', $class);
 
-	if (count($folder) < 3) {
-		return false;
-	}
+    if (count($folder) < 3) {
+        return false;
+    }
 
     $file = "$dir\\{$folder[1]}\\{$folder[2]}.php";
 
@@ -24,9 +24,9 @@ function loadModels($class)
 
     $folder = explode('\\', $class);
 
-	if (count($folder) < 3) {
-		return false;
-	}
+    if (count($folder) < 3) {
+        return false;
+    }
 
     echo $file = "$dir\\{$folder[1]}\\{$folder[2]}.php";
 
@@ -36,14 +36,12 @@ function loadModels($class)
     }
 }
 
-// Registra as pastas model e library para
+// Registra as pastas Models e Library para
 // ficarem no outro load
 spl_autoload_register('loadLibs');
 spl_autoload_register('loadModels');
 
-use ARMODEL\Library\Banco;
-
-Banco::dInjector(array(
+ARMODEL\Library\Banco::dInjector(array(
     'driver'    => 'mysql',
     'host'      => 'localhost',
     'dbname'    => 'seu banco',
