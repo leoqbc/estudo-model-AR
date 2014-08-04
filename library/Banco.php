@@ -42,7 +42,8 @@ class Banco
         try {
             // Passando as dependencias por fora
             $config = self::$dependencias;
-            $this->conexao = new \PDO("{$config['driver']}:host={$config['host']};dbname={$config['dbname']}", $config['user'], $config['pass']);
+            $this->conexao = new \PDO("{$config['driver']}:host={$config['host']};
+                dbname={$config['dbname']}", $config['user'], $config['pass']);
             $this->conexao->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         } catch (\PDOException $e) {
             echo $e->getMessage();
